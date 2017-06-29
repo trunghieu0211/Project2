@@ -1,0 +1,9 @@
+tag:
+  tag_max_size: 50
+comment:
+  comment_max_size: 100
+post:
+  title_max_size: 50
+user:
+  name_max_size: 20
+  phone_max_size: 15
