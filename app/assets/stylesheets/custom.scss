@@ -1,2 +1,81 @@
 @import 'bootstrap';
 @import 'bootstrap-sprockets';
+
+$pinkf2dede: #f2dede;
+$pinkeed3d7: #eed3d7;
+$redb94a48: #b94a48;
+$whitedff0d8: #dff0d8;
+$whited6e9c6: #d6e9c6;
+$green468847: #468847;
+$white: #fff;
+$black: #000;
+$whitedfdfdf: #dfdfdf;
+$grayc2c2c2: #c2c2c2;
+
+//*flash*
+
+.alert {
+  list-style-type: none;
+  ul li {
+    list-style-type: none;
+  }
+}
+
+.alert-error,
+.alert-alert {
+  background-color: $pinkf2dede;
+  border-color: $pinkeed3d7;
+  color: $redb94a48;
+  text-align: left;
+}
+
+.alert-success,
+.alert-notice {
+  background-color: $whitedff0d8;
+  border-color: $whited6e9c6;
+  color: $green468847;
+  text-align: left;
+}
+
+.closebtn {
+  color: $white;
+  cursor: pointer;
+  float: right;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 20px;
+  margin-left: 15px;
+  transition: .3s;
+  &:hover {
+    color: $black;
+  }
+}
+
+//*login form*
+
+.nav-tabs {
+  border-bottom: 0;
+  margin-bottom: 15px;
+}
+
+.sign-with {
+  margin-top: 25px;
+  padding: 20px;
+}
+
+.or {
+  background: $whitedfdfdf;
+  border: 1px solid $grayc2c2c2;
+  border-radius: 50%;
+  float: right;
+  font-size: 12px;
+  font-weight: bold;
+  height: 30px;
+  line-height: 28px;
+  position: absolute;
+  right: -16px;
+  text-align: center;
+  top: 40%;
+  width: 30px;
+  z-index: 1;
+}

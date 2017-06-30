@@ -22,4 +22,33 @@ en:
   static_pages:
     home:
       home: "Home"
+  devise:
+    sessions:
+      new:
+        login: "LOGIN"
+        or: "OR"
+        sign_with: "Sign in with"
+        facebook: "Facebook"
+        google: "Google"
+    registrations:
+      new:
+        signup: "SIGN UP"
+        sign_up: "Sign up"
+        or: "OR"
+        sign_with: "Sign in with"
+        facebook: "Facebook"
+        google: "Google"
+        char_min: "characters minimum"
+      edit:
+        edit: "EDIT"
+        char_min: "characters minimum"
+        or: "OR"
+        current_password: "(we need your current password to confirm your changes)"
+        currently_waiting: "Currently waiting confirmation for:"
+        dont_want: " (leave blank if you don't want to change it)"
+        update: "Update"
+    passwords:
+      new:
+        forgot: "Forgot your password?"
+        send_reset: "Send me reset password instructions"
 
