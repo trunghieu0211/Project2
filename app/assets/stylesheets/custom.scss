@@ -11,9 +11,10 @@ $white: #fff;
 $black: #000;
 $whitedfdfdf: #dfdfdf;
 $grayc2c2c2: #c2c2c2;
+$whitef2f2f2: #f2f2f2;
+$not13232f: #13232f;
 
 //*flash*
-
 .alert {
   list-style-type: none;
   ul li {
@@ -78,4 +79,17 @@ $grayc2c2c2: #c2c2c2;
   top: 40%;
   width: 30px;
   z-index: 1;
+}
+.container-body {
+  background-color: $whitef2f2f2;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px $not13232f;
+  margin: 40px auto;
+  max-width: 1000px;
+  overflow: hidden;
+  padding: 40px;
+  .box {
+    border-right: 1px dotted $grayc2c2c2;
+    padding-right: 30px;
+  }
 }
