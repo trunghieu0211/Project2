@@ -68,3 +68,15 @@ en:
     confirmations:
       new:
         resend: "Resend confirmation instructions"
+  users:
+    show:
+      edit: "Edit"
+      follow: "Follow"
+      posts: "Posts"
+      following: "Following"
+      following: "Following"
+    index:
+      user: "User"
+      created: "Created"
+      status: "Status"
+      email: "Email"

@@ -1,0 +1,22 @@
+<div class="col-lg-12">
+  <div class="main-box no-header clearfix">
+    <div class="main-box-body clearfix">
+      <div class="table-responsive">
+        <table class="table user-list">
+          <thead>
+            <tr>
+             <th><span><%= t ".user" %></span></th>
+             <th><span><%= t ".created" %></span></th>
+             <th><span><%= t ".status" %></span></th>
+             <th><span><%= t ".email" %></span></th>
+             <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @users %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
