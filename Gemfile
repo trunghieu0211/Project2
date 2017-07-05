@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "bootstrap-sass", "~> 3.3", ">= 3.3.7"
+gem "carrierwave"
 gem "coffee-rails", "~> 4.2"
 gem "config", "~> 1.4"
 gem "devise", "~> 4.3"
