@@ -51,4 +51,20 @@ en:
       new:
         forgot: "Forgot your password?"
         send_reset: "Send me reset password instructions"
-
+      edit:
+        change_password: "Change your password"
+        new_password: "New password"
+        char_min: "characters minimum"
+        confir: "Confirm new password"
+        change_my_password: "Change my password"
+    shared:
+      links:
+        login: "Login"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        confirm: "Didn't receive confirmation instructions?"
+        unlock: "Didn't receive unlock instructions?"
+        omniauth: "Sign in with"
+    confirmations:
+      new:
+        resend: "Resend confirmation instructions"
