@@ -1,0 +1,39 @@
+<div class="profile-body">
+  <div class="col-md-4">
+    <div class="profile">
+      <div class="image">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <%= image_tag @user.avatar_url() if @user.avatar? %>
+      </div>
+
+      <div class="name"></div>
+      <div class="job"></div>
+
+      <div class="actions">
+        <% if user_signed_in? %>
+        <% if current_user.id == @user.id %>
+        <%= link_to t(".edit"), edit_user_registration_path, class: "btn" %>
+        <% elsif %>
+        <button class="btn"><%= t ".follow" %></button>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="box">
+        <span class="value"></span>
+        <span class="parameter"><%= t ".posts" %></span>
+      </div>
+      <div class="box">
+        <span class="value"></span>
+        <span class="parameter"><%= t ".following" %></span>
+      </div>
+      <div class="box">
+        <span class="value"></span>
+        <span class="parameter"><%= t ".follower" %></span>
+      </div>
+    </div>
+  </div>
+</div>
