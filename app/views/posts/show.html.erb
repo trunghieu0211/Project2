@@ -1,0 +1,64 @@
+<% provide :title, @post.title %>
+<div class="col-lg-8 content">
+  <h1><%= @post.title %></h1>
+  <p class="lead">
+      <div class="by">
+        <%= link_to @post.user.name, user_path(@post.user), class: "label label-info" %>
+      </div></br>
+      <span class="badge"><%= t ".post_on" %>
+        <%= @post.created_at.strftime("%Y-%m-%d %H:%M:%S") %>
+      </span>
+      <div class="pull-right">
+        <a href=""><span class="label label-primary"><%= t ".story" %></span></a>
+      </div>
+  <hr>
+  <% if user_signed_in? %>
+      <% if current_user == @post.user %>
+        <%= link_to t(".edit"), edit_post_path(@post), class: "btn btn-warning" %>
+        <%= link_to t(".delete"), post_path(@post), method: :delete,
+         data: {confirm: t(".sure?")}, class: "btn btn-danger" %>
+    <% end %>
+  <% end %>
+  <p class="lead"><%= @post.content.to_s.html_safe %></p>
+  <hr>
+  <hr>
+</div>
+
+<div class="col-md-4">
+    <div class="profile">
+      <div class="image">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <%= link_to picture_for(@post.user), user_path(@post.user) %>
+      </div>
+
+      <div class="name"><%= @post.user.name %></div>
+      <div class="job"><%= @post.user.email %></div>
+
+      <div class="actions">
+        <% if user_signed_in? %>
+          <% if current_user == @post.user %>
+            <%= link_to t(".edit"), edit_user_registration_path, class: "btn" %>
+          <% else %>
+            <button class="btn"><%= r ".follow" %></button>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="box">
+        <span class="value"></span>
+        <span class="parameter"></span>
+      </div>
+      <div class="box">
+        <span class="value">1387</span>
+        <span class="parameter"></span>
+      </div>
+      <div class="box">
+        <span class="value"></span>
+        <span class="parameter"></span>
+      </div>
+    </div>
+    </div>
+
