@@ -22,6 +22,44 @@ en:
   static_pages:
     home:
       home: "Home"
+  posts:
+    create:
+      created_post: "Created post successed!"
+      create_fail: "Create post failed"
+    form:
+      create: "Create"
+    post:
+      posted: "Posted"
+      ago: "ago."
+      delete: "Delete"
+      sure?: "You sure?"
+    edit:
+      edit_post: "Edit post"
+    index:
+      home: "Home"
+      hot_user: "HOT USER"
+      read_more: "READ MORE"
+    new:
+      new_post: "New Post"
+      post_by: "Post by"
+      ago: "ago."
+      comment: "Comment:"
+    show:
+      reply: "Reply to Message:"
+      back: "Back"
+      edit: "Edit"
+      delete: "Delete"
+      sure?: "Are you sure?"
+    update:
+      update_post: "Updated post successed!"
+      update_fail: "Updated post failed"
+    destroy:
+      destroy_post: "Delete post successed!"
+      destroy_fail: "Delete post failed"
+  shared:
+    error_messages:
+      form_contain: "The form contains"
+      error: "error"
   devise:
     sessions:
       new:
