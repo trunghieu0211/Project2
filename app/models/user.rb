@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :trackable, :validatable
+
+  scope :user_order, ->{order created_at: :desc}
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy

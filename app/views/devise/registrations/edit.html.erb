@@ -1,7 +1,6 @@
 <div class="container-body">
   <% provide :title, t(".edit") %>
   <h2><%= t ".edit" %></h2>
-
   <%= form_for resource, as: resource_name, url: registration_path(resource_name ,
     html:{method: :put}) do |f| %>
     <%= devise_error_messages! %>
@@ -13,7 +12,7 @@
 
     <div class="field form-group">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+      <%= f.email_field :email, autofocus: true, class: "form-control", disabled: true %>
     </div>
 
     <div class="field form-group">
@@ -44,6 +43,11 @@
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off",
         class: "form-control" %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.label :avatar %><br />
+      <%= f.file_field :avatar, autocomplete: "off" %>
     </div>
 
     <div class="actions form-group">

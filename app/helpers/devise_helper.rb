@@ -9,4 +9,12 @@ module DeviseHelper
     HTML
     html.html_safe
   end
+
+  def picture_for user
+    if user.avatar?
+      image_tag user.avatar_url()
+    else
+      image_tag "default.png.jpg"
+    end
+  end
 end
