@@ -1,0 +1,43 @@
+<div class="main-box no-header clearfix">
+  <div class="main-box-body clearfix">
+    <div class="table-responsive">
+      <table class="table user-list">
+        <thead>
+          <tr>
+            <th><span><%= t ".user" %></span></th>
+            <th><span><%= t ".created" %></span></th>
+            <th><span><%= t ".status" %></span></th>
+            <th><span><%= t ".email" %></span></th>
+            <th>&nbsp;</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% object.each do |user| %>
+            <tr>
+              <td>
+                <div class="avatar-post">
+                  <div class="circle-1"></div>
+                  <div class="circle-2"></div>
+                  <%= link_to picture_for(user), user_path(user) %>
+                  <%= link_to user.name, user_path(user) %>
+                </div>
+              </td>
+              <td>
+                <span class="label label-primary">
+                  <%= user.created_at.strftime(t ".date_format") %>
+                </span>
+              </td>
+              <td class="text-center">
+                <span class="label label-default"></span>
+              </td>
+              <td>
+                <a href="#"><%= user.email %></a>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<%= paginate object, :theme => "twitter-bootstrap-3" %>

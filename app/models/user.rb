@@ -16,4 +16,16 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: Settings.user.name_max_size}
   validates :phone, length: {maximum: Settings.user.phone_max_size}
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
 end

@@ -11,6 +11,8 @@ en:
       signup: "SIGN UP"
       create_post: "CREATE NEW POST"
       my_post: "MY POST"
+      users: "USERS"
+      following: "FOLLOWING"
     footer:
       facebook: "FACEBOOK"
       framgia: "Framgia"
@@ -39,6 +41,9 @@ en:
       home: "Home"
       hot_user: "HOT USER"
       read_more: "READ MORE"
+      post_on: "Posted on"
+      story: "story"
+      date_format: "%Y-%m-%d %H:%M:%S"
     new:
       new_post: "New Post"
       post_by: "Post by"
@@ -50,6 +55,15 @@ en:
       edit: "Edit"
       delete: "Delete"
       sure?: "Are you sure?"
+      posts: "Posts"
+      following: "Following"
+      follower: "Follower"
+      follow: "Follow"
+      post_on: "Posted on"
+      story: "story"
+      date_format: "%Y-%m-%d %H:%M:%S"
+      leave_comment: "Leave a Comment:"
+      unfollow: "Unfollow"
     update:
       update_post: "Updated post successed!"
       update_fail: "Updated post failed"
@@ -60,6 +74,9 @@ en:
     error_messages:
       form_contain: "The form contains"
       error: "error"
+    stats:
+      following: "following"
+      followers: "followers"
   devise:
     sessions:
       new:
@@ -106,3 +123,52 @@ en:
     confirmations:
       new:
         resend: "Resend confirmation instructions"
+  comments:
+    comment:
+      ago: "ago"
+      edit: "Edit"
+      delete: "Delete"
+      sure?: "Are you sure?"
+      default: "default.png.jpg"
+    edit:
+      edit: "Edit comment"
+    form_edit:
+      update: "Update"
+    edit:
+      update: "Update"
+  users:
+    index:
+      user: "User"
+      created: "Created"
+      status: "Status"
+      email: "Email"
+      date_format: "%Y-%m-%d"
+    show:
+      posts: "Posts"
+      following: "Following"
+      follower: "Follower"
+      follow: "Follow"
+      post_on: "Posted on"
+      story: "story"
+      date_format: "%Y-%m-%d %H:%M:%S"
+      unfollow: "Unfollow"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
+    user:
+      user: "User"
+      created: "Created"
+      status: "Status"
+      email: "Email"
+      date_format: "%Y-%m-%d"
+    show_post_follow:
+      home: "Home"
+      hot_user: "HOT USER"
+      read_more: "READ MORE"
+      post_on: "Posted on"
+      story: "story"
+      date_format: "%Y-%m-%d %H:%M:%S"
+    following:
+      following: "Following"
+
