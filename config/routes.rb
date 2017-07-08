@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index] do
     resources :posts, only: :index
   end
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
 end

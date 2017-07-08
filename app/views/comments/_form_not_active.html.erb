@@ -1,0 +1,7 @@
+<%= form_for [@post, @post.comments.build] do |f| %>
+
+  <%= f.text_area :content, class: "form-control", size: "2x5", disabled: true %>
+
+  <%= f.button :submit, class: "btn btn-default", disabled: true %>
+<% end %>
+

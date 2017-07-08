@@ -1,0 +1,29 @@
+ <div class="media" id="comment_<%= comment.id %>">
+  <a class="pull-left" href="">
+    <div class="image avatar-post">
+      <% if comment.user.avatar? %>
+        <%= image_tag comment.user.avatar_url(:thumb) %>
+      <% else %>
+        <%= image_tag t(".default") %>
+      <% end %>
+    </div>
+  </a>
+  <div class="media-body" id="comment_body_<%= comment.id %>">
+    <div class="comment_hidden_<%= comment.id %>">
+      <h4 class="media-heading"><%= comment.user.name %>
+        <small><%= comment.updated_at %></small>
+      </h4>
+      <div id="comment_content_<%= comment.id %>"><p><%= comment.content %></p></div>
+      <div class="links">
+        <% if comment.user == current_user %>
+          <%= link_to t(".edit"), edit_post_comment_path(comment.post, comment),
+            remote: :true %>
+        <% end %>
+        <% if @post.user == current_user || current_user == comment.user %>
+          <%= link_to t(".delete"), post_comment_path(comment.post, comment), remote: true,
+            method: :delete, data: {confirm: t(".sure?")} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

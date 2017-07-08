@@ -2,6 +2,7 @@ tag:
   tag_max_size: 50
 comment:
   comment_max_size: 100
+  comment_number: 5
 post:
   title_max_size: 48
   post_number: 5
