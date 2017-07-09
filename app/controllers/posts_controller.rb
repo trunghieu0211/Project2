@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :find_post, except: [:index, :new, :create]
+  before_action :load_post, except: [:index, :new, :create]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @posts = Post.search_post(params[:search]).post_order.page(params[:page]).
@@ -55,7 +56,7 @@ class PostsController < ApplicationController
     params.require(:post).permit :title, :content, :user_id
   end
 
-  def find_post
+  def load_post
     @post = Post.find_by id: params[:id]
 
     check_url @post
