@@ -10,3 +10,4 @@ user:
   name_max_size: 20
   phone_max_size: 15
   user_number: 10
+  number_user_follower: 3
