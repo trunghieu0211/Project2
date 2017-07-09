@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20170705035730) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "phone"
+    t.string "provide"
+    t.string "uid"
     t.boolean "is_admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
