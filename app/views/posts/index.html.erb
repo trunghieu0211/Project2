@@ -1,0 +1,61 @@
+<div class="profile-body">
+<% provide :title, t(".home") %>
+
+  <div class="col-md-8 content">
+    <% @posts.post_order.each do |post| %>
+      <div>
+        <div class="avatar-post">
+          <div class="circle-1"></div>
+          <div class="circle-2"></div>
+          <%= link_to picture_for(post.user), user_path(post.user) %>
+          <h3><%= link_to post.title, post_path(post) %></h3>
+          <div class="by">
+            <%= link_to post.user.name, user_path(post.user), class: "label label-info" %>
+          </div></br>
+        </div>
+      </div>
+      <p><%= post.content[0..500].to_s.html_safe %></p>
+      <div>
+        <span class="badge">
+          <%= t ".post_on" %> <%= post.created_at.strftime(t ".date_format") %>
+        </span>
+        <div class="pull-right">
+          <a href="">
+            <span class="label label-primary"><%= t ".story" %></span>
+          </a>
+        </div>
+        <hr class="stylehr">
+      </div>
+    <% end %>
+    <%= paginate @posts, theme: "twitter-bootstrap-3" %>
+  </div>
+
+  <div class="col-md-4">
+    <% @hot_user.each do |user| %>
+        <div class="profile hot_user">
+          <div class="avatar-post image">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+             <%= link_to picture_for(user), user_path(user) %>
+          </div>
+          <div class="name"><%= user.name %></div>
+          <div class="job"><%= user.email %></div>
+        </div>
+
+        <div class="stats">
+          <div class="box">
+            <span class="value"><%= user.posts.size %></span>
+            <span class="parameter"><%= t ".posts" %></span>
+          </div>
+          <div class="box">
+            <span class="value" id="following"><%= user.following.size %></span>
+            <span class="parameter"><%= t ".following" %></span>
+          </div>
+          <div class="box">
+            <span class="value followers" ><%= user.followers.size %></span>
+            <span class="parameter"><%= t ".follower" %></span>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

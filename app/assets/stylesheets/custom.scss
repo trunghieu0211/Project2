@@ -1,18 +1,22 @@
 @import 'bootstrap';
 @import 'bootstrap-sprockets';
+@import "toastr";
 
-$pinkf2dede: #f2dede;
-$pinkeed3d7: #eed3d7;
-$redb94a48: #b94a48;
-$whitedff0d8: #dff0d8;
-$whited6e9c6: #d6e9c6;
-$green468847: #468847;
-$white: #fff;
 $black: #000;
-$whitedfdfdf: #dfdfdf;
+$color_celeste_approx: #ccc;
 $grayc2c2c2: #c2c2c2;
-$whitef2f2f2: #f2f2f2;
+$green468847: #468847;
 $not13232f: #13232f;
+$pinkeed3d7: #eed3d7;
+$pinkf2dede: #f2dede;
+$redb94a48: #b94a48;
+$white: #fff;
+$whited6e9c6: #d6e9c6;
+$whitedfdfdf: #dfdfdf;
+$whitedff0d8: #dff0d8;
+$whitef2f2f2: #f2f2f2;
+
+$url_0: url(/assets/searchicon.png);
 
 //*flash*
 .alert {
@@ -96,4 +100,23 @@ $not13232f: #13232f;
 .content {
   border-right: 1px solid $grayc2c2c2;
   word-wrap: break-word;
+}
+.form-search input[type=text] {
+  background-color: $white;
+  background: $url_0;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  border: 2px solid $color_celeste_approx;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 10px 20px 8px 40px;
+  transition: width 0.4s ease-in-out;
+  width: 130px;
+  &:focus {
+    width: 150%;
+  }
+}
+.hot_user{
+  margin-bottom: 20px;
 }

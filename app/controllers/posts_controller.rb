@@ -2,7 +2,9 @@ class PostsController < ApplicationController
   before_action :find_post, except: [:index, :new, :create]
 
   def index
-    @posts = Post.post_order.page(params[:page]).per Settings.post.post_number
+    @posts = Post.search_post(params[:search]).post_order.page(params[:page]).
+      per Settings.post.post_number
+    @hot_user = User.hot_user
   end
 
   def new
@@ -16,7 +18,7 @@ class PostsController < ApplicationController
       flash[:success] = t ".created_post"
       redirect_to @post
     else
-      flash.now[:danger] = t ".create_fail"
+      flash.now[:error] = t ".create_fail"
       render :new
     end
   end
@@ -32,7 +34,7 @@ class PostsController < ApplicationController
       flash[:success] = t ".update_post"
       redirect_to post_path @post
     else
-      flash.now[:danger] = t ".update_fail"
+      flash.now[:error] = t ".update_fail"
       render :edit
     end
   end
@@ -42,7 +44,7 @@ class PostsController < ApplicationController
       flash[:success] = t ".destroy_post"
       redirect_to user_path current_user
     else
-      flash.now[:danger] = t ".destroy_fail"
+      flash.now[:error] = t ".destroy_fail"
       redirect_to @post
     end
   end

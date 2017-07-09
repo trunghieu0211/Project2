@@ -16,4 +16,27 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: Settings.user.name_max_size}
   validates :phone, length: {maximum: Settings.user.phone_max_size}
+
+  def follow other_user
+    following << other_user
+  end
+
+  def unfollow other_user
+    following.delete other_user
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
+
+  class << self
+    def array_hot_user
+      joins(:followers).group("users.id").count.sort_by{|_key, value| value}
+        .reverse.first(Settings.user.number_user_follower)
+    end
+    def hot_user
+      return unless User.array_hot_user.count > 0
+      User.find User.array_hot_user.transpose[0]
+    end
+  end
 end
