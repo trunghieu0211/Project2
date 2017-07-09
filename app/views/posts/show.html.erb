@@ -1,0 +1,89 @@
+<% provide :title, @post.title %>
+<div class="col-lg-8 content">
+  <h1><%= @post.title %></h1>
+  <p class="lead">
+  <div class="by">
+    <%= link_to @post.user.name, user_path(@post.user), class: "label label-info" %>
+  </div></br>
+  <span class="badge">
+    <%= t ".post_on" %> <%= @post.created_at.strftime(t ".date_format") %>
+  </span>
+  <div class="pull-right"><a href=""><span class="label label-primary"><%= t ".story" %></span></a></div>
+  <hr>
+  <% if current_user == @post.user %>
+    <%= link_to t(".edit"), edit_post_path(@post), class: "btn btn-warning" %>
+    <%= link_to t(".delete"), post_path(@post), method: :delete,
+     data: {confirm: t(".sure?")}, class: "btn btn-danger" %>
+  <% end %>
+  <p class="lead"><%= @post.content.to_s.html_safe %></p>
+  <hr>
+  <div class="well">
+    <h4><%= t ".leave_comment" %></h4>
+    <div class="form_comment">
+      <% if user_signed_in? %>
+        <%= render "comments/form" %>
+      <% elsif %>
+        <%= render "comments/form_not_active" %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+
+  <div class="comments">
+    <% comments = @post.comments.comment_order.page(params[:page]).per Settings.comment.comment_number %>
+    <%= render comments  %>
+    <div class="text-center">
+      <%= paginate comments , :theme => "twitter-bootstrap-3" %>
+    </div>
+  </div>
+
+</div>
+
+<div class="col-md-4">
+  <div class="profile">
+    <div class="image avatar-post">
+      <div class="circle-1"></div>
+      <div class="circle-2"></div>
+      <%= link_to picture_for(@post.user), user_path(@post.user) %>
+    </div>
+    <div class="name"><%= @post.user.name %></div>
+    <div class="job"><%= @post.user.email %></div>
+    <div class="actions">
+      <% if user_signed_in? %>
+        <% if current_user == @post.user %>
+          <%= link_to t(".edit"), edit_user_registration_path, class: "btn" %>
+        <% else %>
+          <div id="follow_form">
+            <% if current_user.following?(@post.user) %>
+              <%= form_for(current_user.active_relationships.find_by(followed_id: @post.user.id),
+               html: {method: :delete}, remote: true) do |f| %>
+                <%= f.submit t(".unfollow"), class: "btn" %>
+              <% end %>
+            <% else %>
+              <%= form_for(current_user.active_relationships.build, remote: true) do |f| %>
+                <div><%= hidden_field_tag :followed_id, @post.user_id %></div>
+                <%= f.submit t(".follow"), class: "btn btn-primary" %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="box">
+      <span class="value"><%= @post.user.posts.size %></span>
+      <span class="parameter"><%= t ".posts" %></span>
+    </div>
+    <div class="box">
+      <span class="value" id="following"><%= @post.user.following.size %></span>
+      <span class="parameter"><%= t ".following" %></span>
+    </div>
+    <div class="box">
+      <span class="value followers"><%= @post.user.followers.size %></span>
+      <span class="parameter"><%= t ".follower" %></span>
+    </div>
+  </div>
+</div>
+
