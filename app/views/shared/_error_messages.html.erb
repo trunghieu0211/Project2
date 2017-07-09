@@ -1,0 +1,14 @@
+<% if tmp.errors.any? %>
+  <div id="error_explanation" class="dialog-2">
+    <div class="alert alert-danger">
+      <%= t ".form_contain" %> <%= pluralize tmp.errors.count, t(".error") %>.
+    </div>
+    <ul>
+      <div class="alert alert-error alert-danger">
+        <% tmp.errors.full_messages.each do |message| %>
+          <li ><%= message %></li>
+        <% end %>
+      </div>
+    </ul>
+  </div>
+<% end %>

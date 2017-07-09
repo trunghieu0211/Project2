@@ -1,0 +1,17 @@
+<%= form_for @post do |f| %>
+  <%= render "shared/error_messages", tmp: @post %>
+
+  <div class="field form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :content %>
+    <%= f.cktext_area :content, class: "form-control", size: "20x25" %>
+  </div>
+
+  <div class="actions form-group text-center">
+    <%= f.submit t(".create"), class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>
