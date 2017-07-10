@@ -5,6 +5,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :phone
+      t.string :provide
+      t.string :uid
       t.boolean :is_admin, default: false
       t.string :reset_password_token
       t.datetime :reset_password_sent_at
